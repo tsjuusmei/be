@@ -12,3 +12,5 @@ app.use((req, res) => res.status(404).send('404'))
 
 console.log(cc('back-end'))
 
+
+// push command: git push -f origin master
