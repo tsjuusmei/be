@@ -10,6 +10,9 @@ app.set('view engine', 'ejs')
 
 app.listen(port, () => console.log('listening on port ' + port))
 
+// voorbeeld voor dynamic data
+// app.get('/:route', (req, res) => res.render('index', {route: req.params.route}))
+
 app.get('/', (req, res) => res.render('index'))
 app.get('/about', (req, res) => res.render('about'))
 app.get('/contact', (req, res) => res.render('contact'))
