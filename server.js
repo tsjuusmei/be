@@ -6,11 +6,13 @@ const port = 3000
 
 app.use('/static', express.static('static'))
 
+app.set('view engine', 'ejs')
+
 app.listen(port, () => console.log('listening on port ' + port))
 
-app.get('/', (req, res) => res.sendFile(path.join(__dirname + '/static/index.html')))
-app.get('/about', (req, res) => res.sendFile(path.join(__dirname + '/static/about.html')))
-app.get('/contact', (req, res) => res.sendFile(path.join(__dirname + '/static/contact.html')))
+app.get('/', (req, res) => res.render('index'))
+app.get('/about', (req, res) => res.render('about'))
+app.get('/contact', (req, res) => res.render('contact'))
 
 app.use((req, res) => res.status(404).send('404'))
 
