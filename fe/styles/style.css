@@ -17,51 +17,53 @@ ul {
     padding-inline-start: 0;
 }
 
-.home header figure img {
+.profile header figure img {
     max-width: 25vw;
     border-radius: 50%;
 }
 
-.home header {
+.profile header {
     display: flex;
     justify-content: center;
     text-align: center;
     margin-top: 50px;
 }
 
-.home main > ul li figure img{
+.profile main > ul li figure img{
     max-width: 10vw;
 }
 
-.home main > ul li figure figcaption {
+.profile main > ul li figure figcaption {
     margin-top: 10px;
 }
 
-.home main > ul li figure {
+.profile main > ul li figure {
     text-align: center;
 }
 
-.home main > ul {
+.profile main > ul {
     display:flex;
     justify-content: space-evenly;
     margin-top: 40px;
 }
 
-.home main > div {
-    margin: 20px 0 0 40px;
+.profile main > div {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
 }
 
-.home main > div ul {
+.profile main > div ul {
     
 }
 
-.home main > div ul li img {
+.profile main > div ul li img {
     max-width: 10vw;
     border-radius: 50%;
     margin-right: 20px;
 }
 
-.home main > div ul li {
+.profile main > div ul li {
     display: flex;
     margin-top: 10px;
     align-items: center;
