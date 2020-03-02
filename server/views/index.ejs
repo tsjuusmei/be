@@ -7,8 +7,14 @@
     <!-- voorbeeld voor dynamic data -->
     <!-- <h1>Route to: <%=  %></h1> -->
     
-    <h1> <%= data[1].title %> </h1>
-    <h2>test2</h2>
+    <% for( let i = 0; i < data.length; i++) { %>
+        <h1> <%= data[i].title %> </h1>
+        <h2> Plot </h2>
+        <p> <%= data[i].plot %> </p>
+        <h2> Description </h2>
+        <p> <%= data[i].description %> </p>
+
+    <% } %>
 
 </body>
 </html>
