@@ -4,7 +4,8 @@
   "description": "project for blok-tech",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "nodemon server.js",
+    "lint": "eslint ."
   },
   "author": "Guus",
   "license": "MIT",
