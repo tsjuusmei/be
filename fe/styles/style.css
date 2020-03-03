@@ -60,7 +60,6 @@ main > div ul {
 main > div ul li img {
     max-width: 10vw;
     border-radius: 50%;
-    margin: 0 20px;
 }
 
 main > div ul li {
@@ -69,3 +68,33 @@ main > div ul li {
     align-items: center;
 }
 
+/* margins for profile pictures on likes and visitors page */
+.likes main > div ul li img {
+    margin-left: 20px;
+}
+
+.visitors main > div ul li img {
+    margin-right: 20px;
+}
+
+/* footer navigatie */
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+}
+
+nav ul {
+    display: flex;
+}
+
+nav ul a li {
+    width: 33vw;
+    text-align: center;
+}
+
+nav ul a li img {
+    max-width: 10vw;
+    border-radius: 50%;
+}
