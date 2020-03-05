@@ -1,31 +1,29 @@
 const express = require('express')
 const path = require('path')
+const bodyParser = ('body-parser')
 const app = express()
 const port = 3000
 
-// statische files uit static folder
+
+
+
+// static files from static folders
 app.use('/static', express.static('static'))
 
 // templating engine
 app.set('view engine', 'ejs')
 
-// port met een console log op welke port de server naar luisterd
+// listen to port and display the port in console
 app.listen(port, () => console.log('listening on port ' + port))
 
-// voorbeeld voor dynamic data
-// app.get('/:route', (req, res) => res.render('index', {route: req.params.route}))
-
-// routing met render van ejs files
+// routing with ejs files
 app.get('/', (req, res) => res.render('index', {data: data}))
 app.get('/about', (req, res) => res.render('about'))
 app.get('/contact', (req, res) => res.render('contact'))
 
-// 404 bij not found
+// 404 when not found
 app.use((req, res) => res.status(404).send('404'))
 
-// push command: git push -f origin master
-
-// data voor films
 let data = [
     {
         id: 'film1',
