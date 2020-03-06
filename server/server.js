@@ -21,6 +21,7 @@ app.listen(port, () => console.log('listening on port ' + port))
 app.get('/', (req, res) => res.render('index', {data: data}))
 app.get('/about', (req, res) => res.render('about'))
 app.get('/contact', (req, res) => res.render('contact'))
+app.get('/add', (req, res) => res.render('add'))
 app.get('/:id', detail)
 
 // 404 when not found
