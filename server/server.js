@@ -1,6 +1,7 @@
 const express = require('express')
 const path = require('path')
 const bodyParser = ('body-parser')
+const find = require('array-find')
 const app = express()
 const port = 3000
 
@@ -23,12 +24,12 @@ app.get('/contact', (req, res) => res.render('contact'))
 app.get('/:id', detail)
 
 // 404 when not found
-app.use((req, res) => res.status(404).send('404'))
+// app.use((req, res) => res.status(404).send('404'))
 
 function detail(req, res, next) {
     let id = req.params.id
-    let movie = find(data, function(moviename) {
-        return moviename === id
+    let movie = find(data, function (value) {
+        return value.id === id
     })
 
     if(!movie) {
