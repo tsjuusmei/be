@@ -28,8 +28,8 @@ app.get('/:id', detail)
 
 function detail(req, res, next) {
     let id = req.params.id
-    let movie = find(data, function (value) {
-        return value.id === id
+    let movie = find(data, function(movie) {
+        return movie.id === id
     })
 
     if(!movie) {
