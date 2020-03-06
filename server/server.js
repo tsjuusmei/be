@@ -1,10 +1,14 @@
 const express = require('express')
 const path = require('path')
-const bodyParser = ('body-parser')
+const bodyParser = require('body-parser')
 const find = require('array-find')
-const app = express()
-const port = 3000
+const slug = require('slug')
 const multer = require('multer')
+
+const app = express()
+
+const port = 3000
+
 const upload = multer({dest: 'static/upload'})
 
 
