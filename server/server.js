@@ -4,8 +4,8 @@ const bodyParser = ('body-parser')
 const find = require('array-find')
 const app = express()
 const port = 3000
-
-
+const multer = require('multer')
+const upload = multer({dest: 'static/upload'})
 
 
 // static files from static folders
@@ -24,12 +24,15 @@ app.get('/contact', (req, res) => res.render('contact'))
 app.get('/add', (req, res) => res.render('add'))
 app.get('/:id', detail)
 
+// post route for form
+app.post('/', upload.single('cover'), add)
+
 // 404 when not found
-// app.use((req, res) => res.status(404).send('404'))
+app.use((req, res) => res.status(404).send('404'))
 
 function detail(req, res, next) {
-    let id = req.params.id
-    let movie = find(data, function(movie) {
+    const id = req.params.id
+    const movie = find(data, function(movie) {
         return movie.id === id
     })
 
@@ -55,4 +58,18 @@ let data = [
         description: 'de descriptie voor film twee is heel anders'
     }
 ]
+
+function add(req, res) {
+    const id = slug(req.body.title).toLowerCase()
+  
+    data.push({
+      id: id,
+      title: req.body.title,
+      cover: req.file ? req.file.filename : null,
+      plot: req.body.plot,
+      description: req.body.description
+    })
+  
+    res.redirect('/' + id)
+  }
 
