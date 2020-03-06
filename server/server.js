@@ -20,9 +20,24 @@ app.listen(port, () => console.log('listening on port ' + port))
 app.get('/', (req, res) => res.render('index', {data: data}))
 app.get('/about', (req, res) => res.render('about'))
 app.get('/contact', (req, res) => res.render('contact'))
+app.get('/:id', detail)
 
 // 404 when not found
 app.use((req, res) => res.status(404).send('404'))
+
+function detail(req, res, next) {
+    let id = req.params.id
+    let movie = find(data, function(moviename) {
+        return moviename === id
+    })
+
+    if(!movie) {
+        next()
+        return
+    }
+
+    res.render('detail.ejs', {data: movie})
+}
 
 let data = [
     {

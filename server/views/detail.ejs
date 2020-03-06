@@ -5,14 +5,14 @@
 </head>
 <body>
     
-    <% for( let i = 0; i < data.length; i++) { %>
-        <h1> <%= data[i].title %> </h1>
-        <h2> Plot </h2>
-        <p> <%= data[i].plot %> </p>
-        <h2> Description </h2>
-        <p> <%= data[i].description %> </p>
-
+    <title><%= data.title %> - My movie website</title>
+    <h1><%= data.title %></h1>
+    <% if (data.cover) { %>
+    <imgalt
+      src="/upload/<%= data.cover %>"
+    >
     <% } %>
+    <p><%= data.description %></p>
 
 </body>
 </html>
