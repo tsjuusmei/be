@@ -77,3 +77,14 @@ function add(req, res) {
     res.redirect('/' + id)
   }
 
+  function remove(req, res) {
+    var id = req.params.id
+  
+    data = data.filter(function (value) {
+      return value.id !== id
+    })
+  
+    res.json({status: 'ok'})
+  }
+  
+
