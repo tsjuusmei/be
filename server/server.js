@@ -4,6 +4,17 @@ const bodyParser = require('body-parser')
 const find = require('array-find')
 const slug = require('slug')
 const multer = require('multer')
+const mongo = require('mongodb')
+
+require('dotenv').config()
+
+let db = null
+const url = 'mongodb://' = process.env.DB_HOST + ':' + process.env.DB_PORT
+
+mongo.MongoClient.connect(url, function(err, client) {
+    if (err) throw err
+    db = client.db(process.env.DB_NAME)
+})
 
 const app = express()
 
