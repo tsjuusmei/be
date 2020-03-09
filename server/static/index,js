@@ -24,3 +24,5 @@ function onremove(ev) {
     throw new Error('Could not delete!')
   }
 }
+
+console.log('js linked')
